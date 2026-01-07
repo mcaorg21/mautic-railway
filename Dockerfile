@@ -20,3 +20,7 @@ ENV MAUTIC_URL=$MAUTIC_URL
 ENV MAUTIC_ADMIN_EMAIL=$MAUTIC_ADMIN_EMAIL
 ENV MAUTIC_ADMIN_PASSWORD=$MAUTIC_ADMIN_PASSWORD
 ENV PHP_INI_DATE_TIMEZONE='UTC'
+
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
